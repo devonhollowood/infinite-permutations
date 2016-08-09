@@ -1,2 +1,4 @@
 # infinite-permutations
 Generating all the permutations of "INFINITE" which do not contain "INN", "FIN", or "NET"
+
+DISCLAIMER: This algorithm runs in something like `O(C * N)`, where `C` is the number of unique combinations of the orignal large string (in this case `"INFINITE"`), and `N` is the number of substrings to check (in this case `"INN"`, `"FIN"`, and `"NET"`). Here `C = 8! / (3! * 2!) = 3360`, and `N = 3`, so this is fine. However, if you had a much larger input string (say `"ANTIDISESTABLISHMENTARIANISM"`, where `C = 30,631,946,917,168,396,800,000`), then you might want to implement this using an algorithm based on [inclusion-exclusion](https://en.wikipedia.org/wiki/Inclusion%E2%80%93exclusion_principle), which could run much faster (something like `O(L * N^2)`, where `L` is the length of the orignal large string). The naïve algorithm given here was chosen because it is very simple and more than fast enough for the given problem.
